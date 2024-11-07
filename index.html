@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Arthur's Movie Search</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="./api.js" defer></script> 
+    <!-- dont forget to add this line -->
     <style>
         /* 
         //INTERNAL STYLES HERE OR REPLACE WITH
@@ -44,14 +46,22 @@
         <article class="search__wrapper">
             <form class="search__wrapper" action="">
                 <input class="search" type="text" placeholder="Search.." required>
-                <button class="submit__button"><b>submit</b></button> 
+                <button class="submit__button" onclick="searchMovie()"><b>submit</b></button> 
                 <input class="password" type="password" placeholder="password (optional)">
             </form>
-            <h2>Article Title</h2>
+            <select name="filter" id="filter" onchange="yearFilter()">
+                <option value="" disabled selected>select</option>
+                <option value="newtoold">new to old</option>
+                <option value="oldtonew">old to new</option>
+            </select>
+            
         </article>
         <aside>
             <h3>Aside Title</h3>
         </aside>
+        <div class="movies">
+            
+        </div>
     </main>
     <footer>
         Footer Stuff
