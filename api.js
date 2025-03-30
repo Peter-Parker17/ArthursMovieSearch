@@ -11,10 +11,10 @@ async function searchMovie(movieFilter) {
   const movieData = await data.json();
   const result = movieData.Search
   if (movieFilter === "newtoold") {
-    result.sort((a,b) => b.Year- a.Year)
+    result.sort((a,b) => b.Year - a.Year)
   }
   if (movieFilter === "oldtonew") {
-    result.sort((a,b) => a.Year- b.Year)
+    result.sort((a,b) => a.Year - b.Year)
   }
   console.log(result);
   resultEl.innerHTML = movieData.Search.map(item => (
